@@ -1,3 +1,4 @@
+.gitignore
 /vendor/
 .vscode
 composer.json
