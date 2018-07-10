@@ -1,0 +1,21 @@
+{
+    "name": "coll/route",
+    "description": "php route",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shuck",
+            "email": "664888772@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coll\\Route\\": "src"
+        }
+    }
+}
