@@ -1,5 +1,5 @@
 <?php 
-namespace Shuck\Collection;
+namespace Coll\Route;
 
 class Collection
 {
@@ -67,7 +67,7 @@ class Collection
     private function uri_to_array($uri)
     {
         // reg = '/+'
-        return preg_split('|(?mi-Us)/+|', trim($uri, '/'));
+        return preg_split('|/+|', trim($uri, '/'));
     }
 
     /**
@@ -120,15 +120,16 @@ class Collection
         if ($this->pattern_arr === null) {
             $this->pattern_arr = $this->uri_to_array($this->pattern);
         }
-
+        
         $uri_arr = $this->uri_to_array($request_uri); //将此次Request的uri转换成array
+
         $maximum = count($this->pattern_arr); //当前pattern可接受最大节点数
 
         //当前请求的节点个数如果多于patter可接受的最大节点个数，直接返回不匹配
         if ( count($uri_arr) > $maximum) return false;
 
         //查找出uri中的参数节点 regular =  :\w+\??
-        preg_match_all('|(?mi-Us):\\w+\\??|', $this->pattern, $rxMatches);
+        preg_match_all('|:\\w+\\??|', $this->pattern, $rxMatches);
 
         foreach ($this->pattern_arr as $key => $value) {
             //如果当前节点是参数节点
