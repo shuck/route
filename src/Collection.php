@@ -115,7 +115,7 @@ class Collection
     public function match($request_uri, $request_method)
     {
         // 不是这个路由可接受的HTTP方法
-        if(!$this->allow_method($request_method)) return false;
+        if(!$this->allow_method($request_method)) return false; 
 
         if ($this->pattern_arr === null) {
             $this->pattern_arr = $this->uri_to_array($this->pattern);
