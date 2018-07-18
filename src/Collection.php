@@ -1,5 +1,5 @@
 <?php 
-namespace Coll\Route;
+namespace Coll\Route; 
 
 class Collection
 {
